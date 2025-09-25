@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route url="/V1/sartaza-stockmobile/stockmobile" method="POST">
+		<service class="SArtaza\StockMobile\Api\StockMobileRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_save"/>
+		</resources>
+	</route>
+	<route url="/V1/sartaza-stockmobile/stockmobile/search" method="GET">
+		<service class="SArtaza\StockMobile\Api\StockMobileRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_view"/>
+		</resources>
+	</route>
+	<route url="/V1/sartaza-stockmobile/stockmobile/:stockmobileId" method="GET">
+		<service class="SArtaza\StockMobile\Api\StockMobileRepositoryInterface" method="get"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_view"/>
+		</resources>
+	</route>
+	<route url="/V1/sartaza-stockmobile/stockmobile/:stockmobileId" method="PUT">
+		<service class="SArtaza\StockMobile\Api\StockMobileRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_update"/>
+		</resources>
+	</route>
+	<route url="/V1/sartaza-stockmobile/stockmobile/:stockmobileId" method="DELETE">
+		<service class="SArtaza\StockMobile\Api\StockMobileRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_delete"/>
+		</resources>
+	</route>
+	<route url="/V1/sartaza-stockmobile/stockmobile/bulk" method="POST">
+		<service class="SArtaza\StockMobile\Api\StockMobileRepositoryInterface" method="bulkSave"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_save"/>
+		</resources>
+	</route>
+</routes>

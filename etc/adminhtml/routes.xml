@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+	<router id="admin">
+		<route frontName="sartaza_stockmobile" id="sartaza_stockmobile">
+			<module before="Magento_Backend" name="SArtaza_StockMobile"/>
+		</route>
+	</router>
+</config>

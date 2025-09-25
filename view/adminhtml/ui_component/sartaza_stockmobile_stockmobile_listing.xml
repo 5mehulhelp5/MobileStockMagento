@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">sartaza_stockmobile_stockmobile_listing.sartaza_stockmobile_stockmobile_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>sartaza_stockmobile_stockmobile_columns</spinner>
+		<deps>
+			<dep>sartaza_stockmobile_stockmobile_listing.sartaza_stockmobile_stockmobile_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="sartaza_stockmobile_stockmobile_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">stockmobile_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>SArtaza_StockMobile::StockMobile</aclResource>
+		<dataProvider name="sartaza_stockmobile_stockmobile_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>stockmobile_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+		<exportButton name="export_button"/>
+	</listingToolbar>
+	<columns name="sartaza_stockmobile_stockmobile_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>stockmobile_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="stockmobile_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="source">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Source</label>
+			</settings>
+		</column>
+		<column name="bar_code">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Bar Code</label>
+			</settings>
+		</column>
+		<column name="qty">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Qty</label>
+			</settings>
+		</column>
+		<column name="date">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Date</label>
+			</settings>
+		</column>
+		<column name="name_token">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Name Token</label>
+			</settings>
+		</column>
+	</columns>
+</listing>
