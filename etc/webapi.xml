@@ -36,4 +36,33 @@
 			<resource ref="SArtaza_StockMobile::StockMobile_save"/>
 		</resources>
 	</route>
+    <!-- Setting one acl permision -->
+    <!-- Like api /rest/default/V1/inventory/sources -->
+	<route url="/V1/sartaza-stockmobile/stockmobile/sources" method="GET">
+        <service class="Magento\InventoryApi\Api\SourceRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_view"/>
+		</resources>
+	</route>
+    <!-- Like api /rest/default/V1/inventory/stock -->
+	<route url="/V1/sartaza-stockmobile/stockmobile/stock" method="GET">
+        <service class="Magento\InventoryApi\Api\StockRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="SArtaza_StockMobile::StockMobile_view"/>
+		</resources>
+	</route>
+    <!-- Like /rest/default/V1/inventory/stock/:stockId -->
+    <route url="/V1/sartaza-stockmobile/stocks/:stockId" method="GET">
+        <service class="Magento\InventoryApi\Api\StockRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="SArtaza_StockMobile::StockMobile_view"/>
+        </resources>
+    </route>
+    <!-- Like /rest/V1/products -->
+    <route url="/V1/sartaza-stockmobile/products" method="GET">
+        <service class="Magento\Catalog\Api\ProductRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="SArtaza_StockMobile::StockMobile_view"/>
+        </resources>
+    </route>
 </routes>
